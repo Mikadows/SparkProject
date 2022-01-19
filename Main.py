@@ -26,7 +26,8 @@ start_time = datetime.now()
 print("--- Question 1")
 
 # group by repo and count commits
-df.groupBy("repo")\
+df.where(df.repo.isNotNull())\
+    .groupBy("repo")\
     .count()\
     .orderBy("count", ascending=False) \
     .show(10, truncate=False)
@@ -52,7 +53,7 @@ date_six_months_ago = int((datetime.now() - timedelta(days=183)).timestamp())
 date_eight_year_and_six_months_ago = int((datetime.now() - timedelta(days=(183 + 365 * 8))).timestamp())
 
 # We make our calcul on the timestamp to be more performant
-df.filter((col("repo") == "apache/spark")) \
+df.filter(col("repo") == "apache/spark") \
         .withColumn("timestamp", unix_timestamp(df.date, 'E MMM d HH:mm:ss yyyy Z')) \
         .where(col("timestamp").between(date_eight_year_and_six_months_ago, int(datetime.now().timestamp()))) \
         .groupBy("author") \

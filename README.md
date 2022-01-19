@@ -12,6 +12,17 @@ School pyspark project
 pip install pyspark
 ```
 
+### Performances and time
+With cached data, the following results are obtained (on core i9-9900k):
+```
+--- Total time : 0:01:04.934484 seconds
+```
+
+With non-cached data, the following results are obtained (on core i9-9900k):
+````
+--- Total time : 0:00:36.262321 seconds
+````
+
 ## Wording - French version (fr)
 
 Récupérez le dataset full.csv du projet GitHub Commit Messages sur Kaggle.
