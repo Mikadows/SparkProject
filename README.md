@@ -23,6 +23,9 @@ With non-cached data, the following results are obtained (on core i9-9900k):
 --- Total time : 0:00:36.262321 seconds
 ````
 
+### Spark UI locally
+Locally, you can access Spark UI at http://localhost:4040
+
 ## Wording - French version (fr)
 
 Récupérez le dataset full.csv du projet GitHub Commit Messages sur Kaggle.

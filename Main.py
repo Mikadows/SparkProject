@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from datetime import datetime, timedelta
+from time import sleep
 
 spark = SparkSession \
     .builder \
@@ -84,3 +85,5 @@ df.withColumn("words", split(df.message, " ")) \
 # Print total time
 print("--- Total time : " + str(datetime.now() - start_time) + " seconds")
 
+print("--- Waiting for 5000 seconds to navigate in spark UI...")
+sleep(5000)
